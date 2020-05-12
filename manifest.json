@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "AvPars",
+  "version": "1.0.0",
+  "description": "Collect smth from avito",
+  "permissions": ["https://avito.ru/*", "http://avito.ru/*", "http://www.avito.ru/*", "https://www.avito.ru/*", "https://api.telegram.org/*", "activeTab", "storage", "tabs", "unlimitedStorage"],
+  
+"content_scripts": [
+  {
+    "matches": [
+      "https://avito.ru/*",
+	  "http://avito.ru/*",
+	  "http://www.avito.ru/*",
+	  "https://www.avito.ru/*",
+	  "https://api.telegram.org/*"
+    ],
+    "js": ["jquery-350.js", "content.js", "list.js"]
+  }
+],
+
+"options_page": "options.html",
+
+"browser_action": {
+"default_icon": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"},
+  "default_popup": "popup.html",
+  "default_action": "That's just a little hint, mkay?" 
+},
+"icons":{"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+        "128": "icons/icon128.png" },
+
+"background": {
+  "scripts": ["background.js"],
+  "persistent": true
+}
+}
